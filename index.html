@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps70</title>
+</head>
+<style>
+    body {
+        font-family: monospace;
+        font-size: 1.2em;
+        margin: 1em;
+        border: turquoise 1em solid;
+        padding: 1em;
+        line-height:1.3em;
+    }
+    .highlight {
+        background-color:turquoise;
+        color: white;
+        font-weight: bold;
+    }
+    a {
+        border: solid 2px turquoise;
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+    }
+    a:hover {
+        background-color:turquoise;
+        color: white;
+        font-weight: bold;
+    }
+    h1 {
+      line-height: 1em;
+    }
+</style>
+<body>
+    <header>
+        <h1>ps70 [dot] raphi [dot] website</h1>
+        <p>A Website Chronicling the coursework Raphi Halff for PS70: Intro to digital Fabrication</p>
+    </header>
+    <h3>Contact</h3>
+    <ul>
+        <li><span class="highlight">E-mail:</span> rhalff [at] g [dot] harvard [dot] edu</li>
+        <li><span class="highlight">Snail-mail:</span> 19 Willoughby St, Somerville MA 02143</li>
+    </ul>
+    <footer>
+        <smaller>last updated: <span id="ts"></span></smaller>
+    </footer>
+    <script>
+        var ts = document.lastModified;
+        document.getElementById("ts").innerHTML = ts;
+    </script>
+    </body>
+</html>
