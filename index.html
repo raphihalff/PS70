@@ -12,22 +12,26 @@
 <style>
     body {
         font-family: monospace;
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin: 1em;
-        border: turquoise 1em solid;
         padding: 1em;
         line-height:1.3em;
+        border: turquoise 1em solid;
     }
     .highlight {
         background-color:turquoise;
         color: white;
         font-weight: bold;
+        line-height: 1.6em;
+        padding: 0em .2em;
     }
     a {
         border: solid 2px turquoise;
         text-decoration: none;
         cursor: pointer;
         color: black;
+        line-height: 1.6em;
+        padding: 0em .2em;
     }
     a:hover {
         background-color:turquoise;
@@ -37,17 +41,50 @@
     h1 {
       line-height: 1em;
     }
+    .section {
+      border: black .2em dashed;
+      margin: .7em 0em;
+      padding: .7em;
+      border-radius: .7em;
+    }
+    nav h3 {
+      display: inline;
+    }
+    :target {
+      background-color: paleturquoise;
+    }
 </style>
 <body>
     <header>
-        <h1>ps70 [dot] raphi [dot] website</h1>
-        <p>A Website Chronicling the Coursework Raphi Halff for PS70: Intro to digital Fabrication</p>
+        <h1><span style="color: turquoise">ps70</span> [dot] raphi [dot] website</h1>
+        <p>A Website Chronicling the Coursework of Raphi Halff for PS70: Intro to Digital Fabrication</p>
     </header>
-    <h3>Contact</h3>
-    <ul>
-        <li><span class="highlight">E-mail:</span> rhalff [at] g [dot] harvard [dot] edu</li>
-        <li><span class="highlight">Snail-mail:</span> 19 Willoughby St, Somerville MA 02143</li>
-    </ul>
+    <nav>
+      <div>
+        <h3><a href="#contact">Contact</a></h3>
+        <h3><a href="#about">About</a></h3>
+        <h3><a href="#final_proposal">Final Project Proposals</a></h3>
+      </div>
+    </nav>
+    <div class="section" id="contact">
+      <h3>Contact</h3>
+      <ul>
+          <li><span class="highlight">E-mail:</span> rhalff [at] g [dot] harvard [dot] edu</li>
+          <li><span class="highlight">Snail-mail:</span> 19 Willoughby St, Somerville MA 02143</li>
+      </ul>
+    </div>
+    <div class="section" id="about">
+      <h3>About</h3>
+          <p>Raphi is a PhD student in comparative literature. <s>He</s> I like<s>s</s> Yiddish. I like lots of other things too: biking, making stuff, and my dog <a href="https://soca.dog">Soca Neshama</a>.</p>
+    </div>
+    <div class="section" id="final_proposal">
+      <h3>Final Project Proposals</h3>
+      <p>I have two ideas for a final project, one abstract, artistic, and less clearly defined, and the other more utilitarian and sketchable.</p>
+      <ul style="list-style-type: decimal-leading-zero;">
+        <li>A book that combines new technology with tradional printing and binding technology to draw attention to the sometimes overlooked physical charactersitics of books, expand on or contrast with the written content, and, at the same time, detract from the reading experience. I envision using speakers, lcd screens, motors (forcibly turn pages, animate pop-ups, move text positions, etc.), haptic feedback, touch sensors, environment sensors, and a mechanism to self-destruct, in the spirit of <a href="https://archiveofdestruction.com/artwork/skoob-towers-ceremonies/">destructive artists</a> and at odds with archival preservation efforts and the persistance of e-waste.</li>
+        <li>Windshield wipers for eyeglasses. This has surprisingly (or perhaps not so surprisingly) been attempted many times, both jokingly—as in the picture of <a href="/images/elton.png">Elton John</a>—and seriously—as in this picture of <a href="/images/motorist.jpg">inventor Davoren in 1934</a>. There have been several <a href="https://www.neatorama.com/2017/04/18/Plucked-From-Obscurity-Eyeglass-Wipers/">patents filed</a>, and there are quite a few youtube tutorials and demonstrations: <a href="https://www.youtube.com/watch?v=xwn11QVoW24&t=15s">William Osman's</a>, <a href="https://www.youtube.com/watch?v=vFq-MaORSlE">Raiden's</a>, <a href="https://www.youtube.com/watch?v=jDX6aNAMXfQ">Benjamin King's</a>, <a href="https://www.youtube.com/watch?v=7sh9EOo7NWQ">Junior Maker's</a>, and this <a href="https://www.youtube.com/watch?v=GpXC7iXuAfA">insulting ad for contact lenses</a>. There are two flaws, however, with all suggested and implemented designs: (1) None actually work as functional devices; and (2) none are designed to fit any glasses frame. The key component of my design is that wiper blades would be made of a thermoplastic that can be heated and shaped to the size and curvature of any lens. The main goal would be functional above all else.</li>
+      </ul>
+    </div>
     <footer>
         <smaller>last updated: <span id="ts"></span></smaller>
     </footer>
