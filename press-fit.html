@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>press-fit</title>
+</head>
+<style>
+    body {
+        font-family: monospace;
+        font-size: 1.3em;
+        margin: 1em;
+        padding: 1em;
+        line-height:1.3em;
+        border: turquoise 1em solid;
+    }
+    .highlight {
+        background-color:turquoise;
+        color: white;
+        font-weight: bold;
+        line-height: 1.6em;
+        padding: 0em .2em;
+    }
+    a {
+        border: solid 2px turquoise;
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+        line-height: 1.6em;
+        padding: 0em .2em;
+    }
+    a:hover {
+        background-color:turquoise;
+        color: white;
+        font-weight: bold;
+    }
+    h1 {
+      line-height: 1em;
+    }
+    .section {
+      border: black .2em dashed;
+      margin: .7em 0em;
+      padding: .7em;
+      border-radius: .7em;
+    }
+    nav h3 {
+      display: inline;
+    }
+    :target {
+      background-color: paleturquoise;
+    }
+</style>
+<body>
+    <header>
+        <h1><span style="color: turquoise">ps70</span> [dot] raphi [dot] website [slash] <span style="color: turquoise">press-fit</span></h1>
+        <p>A Website Chronicling the Coursework of Raphi Halff for PS70: Intro to Digital Fabrication</p>
+    </header>
+    <nav>
+      <div>
+        <h3><a href="/index.html">Home</a></h3>
+        <h3><a href="#design">Design</a></h3>
+        <h3><a href="#printing">Printing</a></h3>
+        <h3><a href="#assembling">Assembling</a></h3>
+
+      </div>
+    </nav>
+
+    <div class="section" id="pressfit">
+      <h2>Press-Fit</h2>
+      <h3 class="highlight" id="design">Design</h3>
+      <p>I wanted something that could connect in various ways while maintaing a square shape. So I drew this beautiful thing:</p>
+      <img src="/images/pressfit/pf_sketch.jpg">
+      <p>I tried cutting one out of cardboard by hand to test how they would fit together. But I quickly gave up. Instead I jumped into Autodesk Fusion 360 and spent much time, as it turned out, doing nothing:</p>
+      <img src="/images/pressfit/pfd_fail.png">
+      <p>I disposed of this atrocity and came up with this:</p>
+      <img src="/images/pressfit/pfd_design.png">
+      <p>I thought long and hard about parameters, most of which I ended up not using:</p>
+      <img src="/images/pressfit/pfd_param.png">
+      <p>I wanted very much to test how these squares might assemble, for I suspected it might be with difficulty, and after tinkering for with Fusion 360 for an unpleasant amount of time and managed this and thought whatever and said enough:</p>
+      <img src="/images/pressfit/pfd_joint.png">
+      <h3 class="highlight" id="printing">Printing</h3>
+      <p>With some help from Ibrahim, printing was a breeze. After an initial test printing, I adjusted the "kerf" parameter to account for some joint looseness. And then went ahead and printed a million. By printing I mean laser cutting. It feels like printing.</p>
+      <img src="/images/pressfit/pf_stack.jpg">
+      <img src="/images/pressfit/pf_stencil.jpg">
+      <h3 class="highlight" id="assembling">Assembling</h3>
+      <p>The squares could indeed connect in various ways, as I had hoped. But, as I had suspected, assembling them was cumbersome since they got in each other's way. This made me think either the square shape is not ideal, or the spacing of the slots is not ideal, or something else I haven't thought of is not ideal. The thin corners that can lock into the interior slots are a bit fragile too... Note that in the center of the square is a hole roughly the diameter of a pencil. I don't have much to say about that.
+        <img src="/images/pressfit/pf_tower.jpg"
+    </div>
+    <footer>
+        <smaller>last updated: <span id="ts"></span></smaller>
+    </footer>
+    <script>
+        var ts = document.lastModified;
+        document.getElementById("ts").innerHTML = ts;
+    </script>
+    </body>
+</html>
