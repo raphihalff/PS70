@@ -1,0 +1,46 @@
+body {
+    font-family: monospace;
+    font-size: 1.3em;
+    margin: 1em;
+    padding: 1em;
+    line-height:1.3em;
+    border: turquoise 1em solid;
+}
+.highlight {
+    background-color:turquoise;
+    color: white;
+    font-weight: bold;
+    line-height: 1.6em;
+    padding: 0em .2em;
+}
+a {
+    border: solid 2px turquoise;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    line-height: 1.6em;
+    padding: 0em .2em;
+}
+a:hover {
+    background-color:turquoise;
+    color: white;
+    font-weight: bold;
+}
+h1 {
+  line-height: 1em;
+}
+.section {
+  border: black .2em dashed;
+  margin: .7em 0em;
+  padding: .7em;
+  border-radius: .7em;
+}
+nav h3 {
+  display: inline;
+}
+:target {
+  background-color: paleturquoise;
+}
+img {
+  height: 300px;
+}
