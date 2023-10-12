@@ -47,5 +47,7 @@ img {
 pre, code {
   background-color: lightsteelblue;
   padding: .5em;
-  border: border: black .1em dashed;
+  border: black .1em dashed;
+  border-radius: 1em;
+  margin: 1em 3em;
 }
