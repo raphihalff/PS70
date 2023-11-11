@@ -43,11 +43,14 @@ nav h3 {
 }
 img {
   height: 300px;
+  max-width: 90%;
+  overflow: hidden;
 }
 pre.text {
-  background-color: lightsteelblue;
-  padding: .5em;
-  border: black .1em dashed;
-  border-radius: 1em;
-  margin: 1em 3em;
+    background-color: lightsteelblue;
+    padding: .5em;
+    border: black .1em dashed;
+    border-radius: 1em;
+    overflow: scroll;
+    margin: .5em .5em;
 }

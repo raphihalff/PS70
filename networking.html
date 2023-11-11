@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/library/highlight/styles/grayscale.min.css">
+    <script src="/library/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>networking</title>
+</head>
+<body>
+    <header>
+        <h1><span style="color: turquoise">ps70</span> [dot] raphi [dot] website [slash] <span style="color: turquoise">networking</span></h1>
+        <p>A Website Chronicling the Coursework of Raphi Halff for PS70: Intro to Digital Fabrication</p>
+    </header>
+    <nav>
+      <div>
+        <h3><a href="/index.html">Home</a></h3>
+        <h3><a href="#design">Design</a></h3>
+        <h3><a href="#assembly">Assembly</a></h3>
+        <h3><a href="#programming">Programming</a></h3>
+        <h3><a href="#todo">To-Do</a></h3>
+      </div>
+    </nav>
+
+    <div class="section" id="networking">
+      <h2>Networking</h2>
+      <h3 class="highlight" id="design">Design</h3>
+      <p>For a while I've been thinking of making an app or some peripheral program in connection to a <a href="https://lider.nu">little poetry website</a> I made. Visually, it has highly unresponsive css styling that does NOT allow for a smooth mobile experience. I thought that for this project, why not use the poetry database I already have up and running on a remote server and make a "poem-a-day" display. Maybe this would encourage people to use or contribute to <a href="https://github.com/raphihalff/Lider/wiki">the poetry project</a> to make better and cooler things.</p>
+      <img src="/images/networking/database.png">
+      <img src="/images/networking/mysql.png">
+      <h3 class="highlight" id="assembly">Assembly</h3>
+      <p>I first tried connecting to the mysql server on an esp32 over, using <a href="https://www.arduino.cc/reference/en/libraries/mysql-connector-arduino/">a library from Charles Bell</a>. This worked but for two things:</p>
+      <ol>
+        <li>I was working at home and couldn't find 2.4 ghz wifi, just 5, which wasn't compatible with the esp32. </li>
+        <li>I already had a beautiful e-ink display for Raspberry Pi and a Pi Zero W board. And I prefer python. And I don't much enjoy the Arduino IDE...</li>
+      </ol>
+      <p>
+      So I took out the Pimoroni Inky Impression and the Pi Zero:
+      </p>
+      <img src="/images/networking/inky_front.jpg">
+      <img src="/images/networking/inky_back.jpg">
+      <img src="/images/networking/rasbpi.jpg">
+      <p>
+      I soddered headers onto the pi board, installed the necessary libraries (and the rasbpian os, of course), and got coding.
+      </p>
+      <h3 class="highlight" id="programming">Programming</h3>
+      <p>The inky has four intergrated buttons. This made it a rather convienient choice for this project. The tasks for <i>A-Lid-A-Tog</i> (A-Poem-a-Day) were the following:</p>
+      <ul>
+        <li>Fetch a poem from the remote mysql server</li>
+        <li>Display the poem in Yiddish or English on the inky</li>
+        <li>Toggle the original and translation at the press of a button</li>
+        <li>Fetch a new poem at the press of a botton</li>
+        <li>Since most poems do not fit even on the impressively large screen, use two buttons for some kind of scroll up/down functionality</li>
+      </ul>
+      <p>Communicating with mysql was very intuitive. Displaying english on the inky was also intuitive. Yiddish, which is read right to left, was trickier. Inky uses the Pillow library which does have a "direction" arguement for many functions, but it relies on a python library I could not install from github. So I wrote one function to reverse the lines (they would print backwords otherwise) and one to find its right-side alignment based on the longest line of the text.</p>
+      <img src="/images/networking/poem_eng.jpg">
+      <img src="/images/networking/poem_yid.jpg">
+      <p>After "reflowing" the text to fit the width of the inky display, I thought the scroll functions could work by splitting the reflowed text by the max number of lines that would fit on the screen at the current font size. Thus a poem of x lines would have ⌈x/max-lines⌉ sections. A press of the up/down scroll button would increment/decrement the scroll-state and refresh the display with the next or previous chunck of text. You can see this in action in the video below.</p>
+      <p>Lastly, I thought, "The poetry site has images and all kind of contextual information. The inky screen is just showing a bare poem on a yellow background." So I added a qr code to the corner of the screen, linking to the respective page of the poetry site. Then I thought, "If I take this to class and want to show it in action, I will have to go into the pi's configs and change the wifi settings..." So I added a preemptory script with preloaded wifi settings from which to select. I have this run on boot.</p>
+      <img src="/images/networking/wifi_setup.png">
+      <video width="90%" controls>
+        <source src="full_cycle.MOV" type="video/mov">
+          Your browser does not support the video tag.
+      </video>
+    <h3 class="highlight" id="todo">To-Do</h3>
+    <p>The visuals could all use some tlc. Images can be incorporated to a much greater extent. Colors too. A screen refresh takes around 30 seconds. For scrolling this is annoying. Inky disables or hides any way of partially refreshing the screen. This can be looked into. Lastly, the wifi setup does not work consistently. I can work to make this much more robust. A start would be to simply catch errors...</p>
+    <p>You can download the <a href="files/networking/a-lid-a-tog.py">A-Lid-A-Tog code</a> and the <a href="/files/networking/wifi_setup.py">WiFi setup code</a>. Note that they rely on external libraries and config files I have not specified or provided...</p>
+    </div>
+
+    <footer>
+        <smaller>last updated: <span id="ts"></span></smaller>
+    </footer>
+    <script src="/script.js"></script>
+    </body>
+</html>
