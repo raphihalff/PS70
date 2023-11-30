@@ -34,14 +34,14 @@
       <h3 class="highlight" id="circuitry">Circuitry</h3>
       <p> The circuitry is very simple, as you can tell by this hideous drawing that helps no one: </p>
       <img src="/images/input/schematic.jpg">
-      <p>I don't include here the wiring for the LCD, which is using backpack to let it use SCL/SDA.</p>
+      <p>I don't include here the wiring for the LCD, which is using a backpack to let it use SCL/SDA.</p>
       <h3 class="highlight" id="programming">Programming</h3>
       <p>I essentially combined and modified the sample sketches for a capacitative sensor and the water quality sensor (KS0429 keyestudio TDS Meter V1.0). The readings for the capacitive sensor were somewhat imprecise in that they fluctuated even when there was no motion and never zeroed out. This, however was not important to me since I was aiming to use it to detect open or closed. This was easily done by setting a threshold of about 35 (out of 1023). In an open state the sensor readout was somehwere between 0 and 35. Closed, as you can see in the graph, the readout hovered somehwere above 100. The big jumps are the result of me briefly applying pressure to the envelope, fully closing the circuit.</p>
       <img src="/images/input/envelope.png">
-      <p>For the TDS water quality sensor, I did the same thing, taking several measurements of tap water values against soapy water values (theres no salt in the lab). Tap water TDS value seems never to go above 330 ppm, but of course this depends on the tap water...</p>
+      <p>For the TDS water quality sensor, I did the same thing, taking several measurements of tap water values against soapy water values (there's no salt in the lab). Tap water TDS value seems never to go above 330 ppm, but of course this depends on the tap water...</p>
       <img src="/images/input/tds.png">
       <a download href="/files/input/lutsky_basic_ops.ino">Download the arduino code here.</a>
-      <p>and please enjoy this demo!</p>
+      <p>And please enjoy this demo!</p>
       <video width="90%" controls>
         <source src="/images/input/demo.m4v" type="video/mp4">
           Your browser does not support the video tag.
