@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/library/highlight/styles/grayscale.min.css">
+    <script src="/library/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps70</title>
+</head>
+<body>
+    <header>
+        <h1><span style="color: turquoise">ps70</span> [dot] raphi [dot] website [slash] <span style="color: turquoise">CNC</span></h1>
+        <p>A Website Chronicling the Coursework of Raphi Halff for PS70: Intro to Digital Fabrication</p>
+    </header>
+    <nav>
+      <div>
+        <h3><a href="/index.html">Home</a></h3>
+        <h3><a href="#deisgn">Design</a></h3>
+        <h3><a href="#routing">Routing</a></h3>
+        <h3><a href="#molding">Molding</a></h3>
+
+      </div>
+    </nav>
+
+    <div class="section" id="cnc">
+      <h2>CNC</h2>
+      <h3 class="highlight" id="design">Design</h3>
+      <p>For my final project I knew I would have a box conatinaing all the electronics. Since all of the sensors involved would have to be accesible to the user, they would have to be mounted to the top of the box (but from the underside), which we can call the "game board." I wanted game board to be easily removable, however, in case the thermal printer should need paper, or anything should need repair. I therefore did not want the game board to be fixed in any way to the body of the box. And since there was virtually no movement involved, I opted to simply route a groove along the perimeter of the underside of the game board, in which the box edges would rest. Certain components (i.e., toggle switch, phototransistors, slide potentiometer) to be mounted there also had to have their footprint inlayed so their sensors or user-facing parts would reach the surface of the game board. The game board had already been laser cut and you shall soon see that it was a very lucky thing I did not try to CNC the top of the game board.
+      </p>
+      <img src="/images/cnc/bottom_dxf.png">
+      <figcaption>The bottom design.</figcaption>
+      <img src="/images/cnc/top_dxf.png">
+      <figcaption>The top design overlaying the bottom to show overlaps.</figcaption>
+      <br>
+      <a download href="/files/cnc/table_bottom.dxf">DXF File.</a>
+      <a download href="/files/cnc/table_bottom.crv">CRV File.</a>
+      <a download href="/files/cnc/table_bottom.sbp">ShopBot File.</a>
+      <h3 class="highlight" id="routing">Routing</h3>
+      <p>Apparently, the CNC doe snot like cheap plywood. It ripped up the board as you can tell in the following images. But it got the job done and no serious damage done. I decided to chisel the top side of the game board by hand though.
+      </p>
+      <img src="/images/cnc/cnc_mess.jpeg">
+      <img src="/images/cnc/cnc_result1.jpeg">
+      <img src="/images/cnc/cnc_result2.jpeg">
+      <h3 class="highlight" id="molding">Molding</h3>
+      <p>There was nothing to mold on the part and I couldn't think of anything to mold at all, so instead of molding I worked on the "well" for the game board. The "well" had to be some kind of vessel that would contain saline solutions poured into it by the user. Simple enough. But it also had to hold the water quality sensor, as I did not want it simply dangling over the lip of the vessel. My original hope was to have some kind of container that would have the sensor facing upwards, but with a slow drainage hole beside it, so "tears" or "poison" could leave and thus be added once again by the user. This liquid hourglass proved too complicated. I bought a small glass jar, drilled a hole in the bottom using a 1/4 glass/ceramic drill bit, inserted the water sensor (which has a 1/4 OD on the first layer of housing), added a touch of super glue on the outer entry point just to hold it in place temporarily, mixed up some liquid silcone and poured it in just up to the level of the electrodes (the two metal probes coming out of the plastic housing). I let this cure overnight in this contraption:
+      </p>
+      <img src="/images/cnc/well_drying.jpeg">
+
+    </div>
+
+    <footer>
+        <smaller>last updated: <span id="ts"></span></smaller>
+    </footer>
+    <script src="/script.js"></script>
+    </body>
+</html>
