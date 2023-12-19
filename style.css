@@ -41,7 +41,7 @@ nav h3 {
 :target {
   background-color: paleturquoise;
 }
-img {
+img, video {
   height: 300px;
   max-width: 90%;
   overflow: hidden;
