@@ -24,6 +24,7 @@
         <h3><a href="#design">Design</a></h3>
         <h3><a href="#cutting">Cutting</a></h3>
         <h3><a href="#printing">Printing</a></h3>
+        <h3><a href="#materials">Materials</a></h3>
         <h3><a href="#assembling">Assembling</a></h3>
         <h3><a href="#programming">Programming</a></h3>
         <h3><a href="#result">Result</a></h3>
@@ -65,6 +66,26 @@
       <a download href="/files/final/spindle.gcode">Spindle GCODE</a>
       <p>The trashcan you can see in the Design section I also designed and 3D printed. The design was to let light through to the phototransistor and let air through from the ultimately absent fan. Note that the spot for the shoebox in that same picture is empty. I never made it because I never got those sensors to work and I would have made it of cardstock by hand and had no need to plan for it in advance.</p>
       <a download href="/files/final/trashcan.gcode">Trashcan GCODE</a>
+
+      <h3 class="highlight" id="materials">Materials</h3>
+      <p>
+        Besides the box materials I ultimately used the following items and components:
+        <ul>
+          <li><a href="https://wiki.keyestudio.com/KS0429_keyestudio_TDS_Meter_V1.0">TDS meter</a> (and the sample code they provide).</li>
+          <li><a href="https://www.microcenter.com/product/465452/DC_Power_Jack">2.1mm power jack.</a></li>
+          <li><a href="https://www.adafruit.com/product/597">Mini thermal receipt printer</a> and Adafruit's Arduino <a href="https://github.com/adafruit/Adafruit-Thermal-Printer-Library">library</a>.</li>
+          <li><a href="https://www.adafruit.com/product/5466"></a>Motorized Slide Potentiometer</li>
+          <li>L9110 Motor Driver</li>
+          <li><a href="https://www.adafruit.com/product/154">Continuous Rotation Servo</a></li>
+          <li>This somewhat convienient <a href="https://www.adafruit.com/product/2077">Proto shield for Arduino</a></li>
+          <li>9V 2 Amp power supply</li>
+          <li>2 Dropper bottles and shorter wider glass jar</li>
+          <li>Envelope and copper adhesive</li>
+          <li>2 phototransistors</li>
+          <li>A bunch of resistors (value in circuit diagram)</li>
+          <li>Lots of wire</li>
+        </ul>
+      </p>
 
       <h3 class="highlight" id="assembling">Assembling</h3>
       <p>It is at this stage that I made the most plentiful and significant mistakes the result of premature decisions and permanent implementations. Before wiring anything, I looked over the datasheets for all the components I planned on using and made a circuit diagram I am sure is technically flawed, but was very helpful for organizing and visualizing. It is missing the envelope capacitive touch however, which is just a wire to digital out and a wire to analog in.</p>
