@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/library/highlight/styles/grayscale.min.css">
+    <script src="/library/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps70</title>
+</head>
+<body>
+    <header>
+        <h1><span style="color: turquoise">ps70</span> [dot] raphi [dot] website [slash] <span style="color: turquoise">Final Project</span></h1>
+        <p>A Website Chronicling the Coursework of Raphi Halff for PS70: Intro to Digital Fabrication</p>
+    </header>
+    <nav>
+      <div>
+        <h3><a href="/index.html">Home</a></h3>
+        <h3><a href="#design">Design</a></h3>
+        <h3><a href="#cutting">Cutting</a></h3>
+        <h3><a href="#printing">Printing</a></h3>
+        <h3><a href="#assembling">Assembling</a></h3>
+        <h3><a href="#programming">Programming</a></h3>
+        <h3><a href="#result">Result</a></h3>
+      </div>
+    </nav>
+
+    <div class="section" id="Final Project">
+      <h2>Final Project</h2>
+      <h3 class="highlight" id="design">Design</h3>
+      <p>The concept of my final project was essentially an interactive narrative. The Yiddish poem by A. Lutsky I used in <a href="/input.html">Input Devices</a> had been adapted, as I discovered in the Harvard archives, for a theatrical recitation by Joseph Buloff and A. Trommer. (You can find all this material on another site of mine: <a href="https://archive.yiddish.nu/items/show/1068">archive.yiddish.nu</a>.) I hoped to take this English story version of the poem and print it in real time, and what it prints depends on the user's interaction with peripheral items.</p>
+      <p>Coming up with the peripheral items required some thorough brainstorming. Some, I decided, would directly involve aspects of this particular story, others would apply to narrative structures and storytelling in general. I came up with the following:</p>
+      <ul>
+        <li>Slide potentiometer: as a fast-forward/rewind device. The idea was that the storyteller (microcontroller) might or might not abide by these commands (i.e., "Stop trying to fastforward, be patient!"). I ended up using one that had a motor attached, so it can be set by the user and the microcontroller.</li>
+        <li>Toggle switch: this would simply be a distraction. Opening or closing the switch would simply irritate the storyteller and perhaps end the story prematurely.</li>
+        <li>Water sensor: the story involves a woman who threatens to kill herself and a lover boy who is meant to cry (but doesn't) upon receiving a love letter from her. Here the user can affect the outcome or sequence of events of the story by supplying "poison" or "tears" to the "well" (a container with a water quality sensor fixed to the bottom, see <a href="/cnc.html">CNC</a>). The solutions contain different concentrations of salt, making it quite easy to determine what is being added to the well.</li>
+        <li>Two phototransistors: these would be placed under a "trash bin" and a "shoebox." The user would be supplied with little post-its representing letters. Should they put them in the trash (i.e., throw the letter out) or in the shoebox (i.e., save it for posterity), the storyline is effected. I had originally planned to have a fan installed under these items (hence why the lasercut gameboard has cutouts on the top left). When the paper befriends the wind, as it does in the story, I wanted the papers in both receptacles to be blown out. The fan was not powerful enough so I removed it. </li>
+        <li>A capacitive touch sensor: a simple circuit wired to copper adhesive on the envelope lip and closure. This detects when the envelope is opened and closed. This is, in essence, turning on the screen or opening the book.</li>
+      </ul>
+      <h3 class="highlight" id="cutting">Cutting</h3>
+      <p>With the gameboard in mind, I made the design to be laser cut and voila: </p>
+      <img src="/images/final/top_laser.jpeg">
+      <p>It looked really nice and I ended up putting a finish on the board game and chiselling out the places for the items (since CNC was ripping the plywood to shreds)—thanks Ollie for the idea. Had I known about the "hatch" fill mode in Rhino I might have used that instead actually... The <a href="https://thenounproject.com/icon/poison-6333163/">skull</a>, <a href="https://thenounproject.com/icon/tear-2504330/">tear</a>, and <a href="https://thenounproject.com/icon/well-4104054/">well</a> icons that I engraved in the wood and cut on the vinyl cutter for the dropper bottles are from the Noun Project. See the links.</p>
+      <img src="/images/final/box_dxf.png">
+      <p>I made the inside of the box one-and-a-half layered. Half of atop layer about 10mm from the top to hold the mini thermal printer. A full level underneath that I assumed would be plenty of space for the electronics and the receipt wrapper. More on that later.</p>
+      <br>
+      <a download href="/files/final/box.dxf">Box Body DXF</a>
+      <a download href="/files/final/table_top.dxf">Gameboard DXF</a>
+      <p>NOTE: The groove on the underside of the gameboard ended up being a few mm off from thew box edge.</p>
+      <img src="/images/final/box_top_bare.jpg">
+      <img src="/images/final/box_top_set.jpg">
+      <h3 class="highlight" id="printing">Printing</h3>
+      <p>Since the story was to be printed in realtime by a receipt printer "under the hood," fed through the gameboard, through the envelope, back out the envelope, back through the gameboard, something had to be pulling it along and gathering the paper. I designed a mount for a continuous rotation servo (which I assumed correctly could rotate slowly and steadily) and a corresponding spindle the size of the thermal paper. This would be fixed to the main internal level of the box, at about center. When the printer would run, so woud the servo. These were 3D printed and work surprisingly well.
+      </p>
+      <img src="/images/final/spindle_mount_body.png">
+      <a download href="/files/final/spindle_mount.stl">Spindle Mount STL</a>
+      <a download href="/files/final/spindle_mount.gcode">Spindle Mount GCODE</a>
+      <a download href="/files/final/spindle.stl">Spindle STL</a>
+      <a download href="/files/final/spindle.gcode">Spindle GCODE</a>
+      <p>The trashcan you can see in the Design section I also designed and 3D printed. The design was to let box light through to the phototransistor and let air through from the ultimately absent fan. Note that the spot for the shoebox in that same pipcture is empty. I never made it because I never got those sensors to work and I would have made it of cardstock by hand and had no need to plan for it in advance.</p>
+      <a download href="/files/final/trashcan.gcode">Trashcan GCODE</a>
+
+      <h3 class="highlight" id="assembling">Assembling</h3>
+      <p>It is at this stage that I made the most plentiful and significant mistakes the result of premature decisions and permanent implementations. Before wiring anything, I looked over the datasheets for all the components I planned on using and made a circuit diagram I am sure is technically flawed, but was very helpful for organizing and visualizing. It is missing the envelope capacitive touch however, which is just a wire to digital out and a wire to analog in.</p>
+      <img src="/images/final/circuit-2.png">
+      <p>As you can see I had planned on using both an Arduino and a Raspberry Pi (Zero W). The intention was to let Arduino harvest the analog inputs from all the sensors, report this all routinely to the pi via serial, and have the pi control the printer and possibly the servo. I wanted this setup for three reasons: (1) I knew Arduino memory would likely not be able to store all of the story's text; (2) I am very comfortable with text manipulation in python and not so much in arduino/c++; and (3) I had thought, if I have time, why not incorporate OpenAI's nice python API for narrative options or even user scoldings.</p>
+      <p>This all seemed so simple to me, that I simply assumed it would all work. The only thing I tested before soldering everything was the power supply. I wanted a unified power supply for: the arduino, the printer, and the servo. (The pi I thought I would power via usb-in from the arduino. I don't think this actually works. You can power pi zero from the bus of a laptop to the pi's usb-in—as in, not power-in—but the arduino doesn't seem to output the same amount.) Via barrel jack, the arduino need over 7.5 V. The printer needs over 5-9V at 1.5 amp and the servo, according to the datasheet works best at 5V. So I ran six ground and power wires to one barrel jack mounted to the rear of the box. Each power cable pair had its own endpiece (barrel, JST, and just wires). My wall outlet supply was 9V 2amp and so had to be reduced for the servo. I made a voltage divider. I tested all of this with a voltage meter and it worked.</p>
+      <img src="/images/final/voltage_divider.jpeg">
+      <figcaption>Voltage divider from 9 to 5V.</figcaption>
+      <p>Except for two things. (1) The Arduino on LED would not turn on with any of the various male barrel endings I tried. I tested them. They were providing power. I even plugged it in to the Arduino and tested the terminals and solder joints—they were reading 9V. But no light. If however I took the power cable ends (without the male barrel end) and made direct contact with the solder joints of the female barrel jack on the arduino—LED is on! I puzzled with this for probably hours (I thought maybe something involving the third pin that checks if anything is inserted) until I just decided to solder the power cables directly these joints. This caused no issues down the road.
+      </p>
+      <p>The servo despite claiming it runs best on a seperate 5V supply, would hum but not move. I fixed a little bit of wire to skip over all the resistors on the voltage divider to see if it would run on 9V, or die, and it worked. So voltage divider was useless.
+      </p>
+      <p>The box was easily assembled. As I soldered the electronics I fit or mounted them in the box. I was quickly starting to realize that it was getting crowded in there. But time was ticking... I had to move on...
+      </p>
+
+      <h3 class="highlight" id="programming">Programming</h3>
+      <p>Goodbye Pi: Adafruit has an archived python library for communicating with the thermal printer. I had tested their arduino library and assumed the python one would work just as smoothly. But I couldn't communicate with it. I did not try very long, probably due to delirious fatigue. I got rid of the pi from the setup. I have a new take now. See the Result section for that.</p>
+      <p>I quickly had all the sensor's smoothly reporting their readings on the arduino, except for the two phototransistors, which I must have wired incorrectly, but for the life of me I can't figure out where. The idea was to have the arduino update these readings at regular intervals in between which it would print the appropriate segments of the story (i.e., the segments in response to the sensor readings).
+      </p>
+      <p>But as I began to involve the text things started to mess up. First the predicted memory arose. I temporarily "solved this" by simply eliminating any logical option of getting beyond the first segment. As in, if you flick the toggle, story teller gets annoyed and stops. Fastforward and the storyteller will start anew cause you're impatient, etc. The second problem I did not see the root of until now, a few days after our final project fair, on reinvestigating the issue with some sleep in my pocket. The String() functions I was using were causing the arduino to actually skip over chunks of code. You can see the latest malfunctioning (but better) <a download href="files/final/lutskys_scrap-o-paper.ino">code here</a>. I didn't think this possible without causing some kind of compilation error, but sure enough it is. So here are two videos (inside and outside) of a partially function Lutski's Scrap-O-Paper.
+      </p>
+      <video width="90%" controls>
+        <source src="/images/final/feed_and_receive.m4v" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <video width="90%" controls>
+        <source src="/images/final/somewhat_working.m4v" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+
+      <h3 class="highlight" id="result">Result</h3>
+      <p>Despite many failures, I think I can say I came close to something beautiful and functioning. I am very much intent on getting this thing not only working but working magnificently, with actual narrative possibilities. My mistakes can be outlined as follows:</p>
+        <ol>
+          <li>Don't hate breadboards so much.</li>
+          <li>Stay away from Arduino Strings and stick to char arrays. Refresh your c++!</li>
+          <li>Design boxes while thinking of cable management and access points.</li>
+          <li>Standard time management stuff.</li>
+        </ol>
+        <p>Next steps: surprisingly, I think not only will I be getting the pi zero back involved, but I think I will try to use only the pi zero. I think this is possible with a nice analog-to-digital converter. I might do an ESP32 instead, but I do love the simplicity of pis. I can even change the code over wifi while it stays inside the box!</p>
+    </div>
+    <footer>
+        <smaller>last updated: <span id="ts"></span></smaller>
+    </footer>
+    <script src="/script.js"></script>
+    </body>
+</html>
